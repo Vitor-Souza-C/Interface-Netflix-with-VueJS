@@ -1,2 +1,18 @@
-# Interface-Netflix-with-VueJS
-Project focused on creating an interactive interface with vue Js and bootstrap. For design i've used netflix' interface.
+### Interface-Netflix-with-VueJS
+
+## Build Setup
+
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
