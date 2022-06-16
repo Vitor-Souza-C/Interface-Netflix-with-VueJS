@@ -1,19 +1,16 @@
 <template>
     <div>
-        <div v-for="section in sections" :key="section.id">
-            <h3>{{section.name}}</h3>
-        
+        <div>
             <Carousel :per-page="6">
-                <slide v-for="movie in movies" :key="movie.id">
+                <slide v-for="movie in movies">
                     <b-card  no-body
                         border-variant="dark" 
-                        align="center"
                         :img-src="movie.banner"
                         img-alt="Image"
                         img-top
                         tag="article"
-                        style="max-width: 20rem; background-color: black;"
-                        class="mb-2 toucheble"
+                        style="background-color: black;"
+                        class="mb-2 toucheble cover"
                     >
                     </b-card>
                 </slide>
@@ -41,5 +38,9 @@ export default{
   height: 200px;
   width: 400px;
   opacity: 1;
+}
+.cover{
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
