@@ -1,35 +1,32 @@
 <template>
     <div>
         <div class="info-content">
-            <footer> <!--info/contact-->
+            <FooterModel v-slot="{hidden, message, languages, infoPopulate}"> <!--info/contact-->
                 <div>
                     <h4 id="socialMidia">Redes Sociais</h4>
                     <ul v-for="social in infoPopulate.socialMidia">
                         <li><b>{{social.id}}:</b> {{social.info}}</li>
                     </ul>
                 </div>
-                <div class="footer-container"> <!--creator/region-->
+                <div class="footer-container"> 
                     <p>{{message + infoPopulate.creator}}</p>
                     <p>{{infoPopulate.date}} - {{infoPopulate.region}}</p>
                 </div> 
-                <div></div> <!--Images-->
-            </footer>
+                <div> <!-- images --></div> 
+            </FooterModel>
         </div>
     </div>
 </template>
 
 <script>
 
+import FooterModel from '../models/footer/FooterModel.vue'
+
 export default {
-  name: 'Footer',
-  data() {
-    return {
-        hidden: false,
-        message: 'This project was developed by ',
-        languages: [{id: "en-us", type: "Inglês"},{id: "pt-br", type: "Português"}],
-        infoPopulate: {date: new Date(), creator: 'Vitor Souza Carvalho', region: 'Brasília-DF, Brasil', socialMidia: [{id: 'facebook', info: 'vitorcarvalho/facebook.com.br'}, {id: 'twitter', info: 'vitorcarvalho/twitter.com'}, {id: 'instagram', info: 'vitorcarvalho/instagram.com.br'}]}
-    }
-  },
+  name: 'Footer', 
+  components: {
+    FooterModel
+  }
 }
 </script>
 
