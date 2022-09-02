@@ -10,9 +10,9 @@ export default {
   data:() => {
     return {
         hidden: false,
-        message: 'This project was developed by ',
+        message: 'Este projeto foi desenvolvido por ',
         languages: [{id: "en-us", type: "Inglês"},{id: "pt-br", type: "Português"}],
-        infoPopulate: {date: new Date(), creator: 'Vitor Souza Carvalho', region: 'Brasília-DF, Brasil', socialMidia: [{id: 'facebook', info: 'vitorcarvalho/facebook.com.br'}, {id: 'twitter', info: 'vitorcarvalho/twitter.com'}, {id: 'instagram', info: 'vitorcarvalho/instagram.com.br'}]}
+        infoPopulate: {creator: 'Vitor Souza Carvalho'}
     }
   }
 }
