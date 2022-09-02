@@ -25,6 +25,7 @@ export default {
 
 <style>
 .section{
-  color: white
+  color: white;
+  padding-left: 6vh
 }
 </style>

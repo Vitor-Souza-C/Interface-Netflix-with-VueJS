@@ -1,8 +1,8 @@
 <template>
     <div>
         <!--Navbar using the bootstrap-vue component-->
-        <NavBar v-slot="{hidden, languages, searching, turnback}">
-            <b-navbar toggleable="lg" type="dark">
+        <NavBar v-slot="{hidden, languages, searching, turnback}" >
+            <b-navbar toggleable="lg" type="dark" class="bk-navbar fixed-top">
                 <b-navbar-brand to="/" class="padding">
                     <img src="../assets/logo.png" class="d-inline-block align-top" alt="VueFlix" height="30">
                 </b-navbar-brand>
@@ -67,7 +67,9 @@ export default{
     position: fixed;
 }
 .spacement{
-    padding: 10rem 2.5rem 10rem 2.5rem;
+    padding: 10rem 0rem 10rem 0rem;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(43,36,36,1) 100%, rgba(3,3,3,1) 100%);
 }
 .margin-variant{
     margin-right: 1rem
@@ -77,6 +79,11 @@ export default{
 }
 .padding{
     padding-left: 1.5rem;
+}
+.bk-navbar{
+    display: fixed;
+    background: rgb(37,29,26);
+    background: linear-gradient(90deg, rgba(37,29,26,1) 0%, rgba(92,30,10,1) 35%, rgba(60,27,27,1) 100%);
 }
 
 </style>
