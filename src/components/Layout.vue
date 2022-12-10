@@ -39,7 +39,7 @@
                             <b-dropdown-item href="#">Gerenciar perfis</b-dropdown-item>
                             <b-dropdown-item href="#">Conta</b-dropdown-item>
                             <b-dropdown-item href="#">Ajuda</b-dropdown-item>
-                            <b-dropdown-item href="#">Sair</b-dropdown-item>
+                            <b-dropdown-item href="/login">Sair</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </b-navbar-nav>
                 </b-collapse>

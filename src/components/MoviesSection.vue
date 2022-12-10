@@ -33,7 +33,7 @@ export default{
   transform: scale(1.3);
 }
 .bind-b-img{
-  height: 22vh;
+  height: 19vh;
   object-fit: cover;
 }
 .swiper-wrapper{
