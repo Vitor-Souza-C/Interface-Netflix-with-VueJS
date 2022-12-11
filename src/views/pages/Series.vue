@@ -1,24 +1,24 @@
 <template>
     <div>
-        <MoviesCatalog v-slot="{ sections, movies }">
+        <SeriesCatalog v-slot="{ sections, movies }">
             <div v-for="section in sections">
                 <CatalogTitle :section="section.title" />
                 <movies-section :movies="movies" />
             </div>
-        </MoviesCatalog>
+        </SeriesCatalog>
     </div>
 </template>
 
 <script>
-    import MoviesSection from '../components/MoviesSection.vue'
-    import MoviesCatalog from '../models/catalog/MoviesCatalog.vue'
-    import CatalogTitle from '../components/catalog-title/CatalogTitle.vue'
+    import CatalogTitle from '@/components/catalog-title/CatalogTitle.vue'
+    import MoviesSection from '../../components/MoviesSection.vue'
+    import SeriesCatalog from '../../models/catalog/SeriesCatalog.vue'
 
     export default {
-        name: 'movies',
+        name: 'series',
         components: {
             MoviesSection,
-            MoviesCatalog,
+            SeriesCatalog,
             CatalogTitle,
         },
     }

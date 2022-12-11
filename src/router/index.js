@@ -1,17 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/pages/HomeView.vue'
 import Layout from '../components/Layout.vue'
-import Login from '../views/Login'
-
+import Login from '../views/pages/auth/Login.vue'
+import LayoutAuth from '../components/login/LayoutAuth.vue'
+import Register from '../views/pages/auth/Register.vue'
+import ForgotPassword from '../views/pages/auth/ForgotPassword.vue'
+import RedefinePassword from '../views/pages/auth/RedefinePassword.vue'
 Vue.use(VueRouter)
 
 const routes = [
-    ,
     {
-        path: '/login',
-        name: 'login',
-        component: Login,
+        path: '/auth',
+        component: LayoutAuth,
+        children: [
+            {
+                path: 'login',
+                component: Login,
+            },
+            {
+                path: 'forgot-password',
+                component: ForgotPassword,
+            },
+            {
+                path: 'register',
+                component: Register,
+            },
+            {
+                path: 'redefine-password',
+                component: RedefinePassword,
+            },
+        ],
     },
     {
         path: '/',
@@ -28,7 +47,7 @@ const routes = [
                 name: 'series',
                 component: () =>
                     import(
-                        /* webpackChunkName: "series" */ '../views/Series.vue'
+                        /* webpackChunkName: "series" */ '../views/pages/Series.vue'
                     ),
             },
             {
@@ -36,7 +55,7 @@ const routes = [
                 name: 'movies',
                 component: () =>
                     import(
-                        /* webpackChunkName: "movies" */ '../views/Movies.vue'
+                        /* webpackChunkName: "movies" */ '../views/pages/Movies.vue'
                     ),
             },
         ],

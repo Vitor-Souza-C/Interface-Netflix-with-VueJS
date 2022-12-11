@@ -18,8 +18,8 @@
 
 <script>
     import CatalogTitle from '@/components/catalog-title/CatalogTitle.vue'
-    import MoviesSection from '../components/MoviesSection.vue'
-    import MainCatalog from '../models/catalog/MainCatalog.vue'
+    import MoviesSection from '../../components/MoviesSection.vue'
+    import MainCatalog from '../../models/catalog/MainCatalog.vue'
 
     export default {
         name: 'HomeView',
