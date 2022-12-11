@@ -84,7 +84,7 @@
                             >
                             <b-dropdown-item href="#">Conta</b-dropdown-item>
                             <b-dropdown-item href="#">Ajuda</b-dropdown-item>
-                            <b-dropdown-item href="/login"
+                            <b-dropdown-item href="/auth/login"
                                 >Sair</b-dropdown-item
                             >
                         </b-nav-item-dropdown>

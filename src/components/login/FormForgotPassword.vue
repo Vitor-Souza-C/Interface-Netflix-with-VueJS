@@ -20,42 +20,11 @@
                 </b-form-invalid-feedback>
             </b-form-group>
 
-            <b-form-group id="input-group-2" label-for="input-2">
-                <b-form-input
-                    id="input-2"
-                    v-model="form.password"
-                    type="password"
-                    size="lg"
-                    :state="passwordVerifiquetion"
-                    placeholder="Digite sua senha"
-                    required
-                ></b-form-input>
-                <router-link
-                    class="text-red-400 float-right"
-                    to="/auth/forgot-password"
-                    >Esqueceu a senha?</router-link
-                >
-
-                <b-form-invalid-feedback id="input-live-feedback">
-                    A senha precisa ter mais de 8 digitos
-                </b-form-invalid-feedback>
-                <div class="pt-10 text-gray-500">
-                    <span
-                        >É novo por aqui?
-                        <router-link
-                            class="text-lg text-red-400"
-                            to="/auth/register"
-                            >Se cadastrar</router-link
-                        >
-                    </span>
-                </div>
-            </b-form-group>
-
             <b-button
                 type="submit"
                 variant="danger "
                 class="w-full bg-red-600 mt-4"
-                >Entrar</b-button
+                >Enviar</b-button
             >
         </b-form>
     </div>
@@ -69,16 +38,11 @@
                 return true
                 // this.form.email.length > 2 ? true : false
             },
-            passwordVerifiquetion() {
-                return true
-                //  this.form.password.length > 7 ? true : false
-            },
         },
         data() {
             return {
                 form: {
                     email: '',
-                    password: '',
                 },
                 show: true,
             }
@@ -87,7 +51,7 @@
             async onSubmit(event) {
                 event.preventDefault()
                 console.log(JSON.stringify(this.form))
-                await this.$router.push('/')
+                await this.$router.push('/auth/redefine-password')
             },
         },
     }
