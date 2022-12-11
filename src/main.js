@@ -6,6 +6,7 @@ import App from './App.vue'
 import router from './router'
 import VueMask from 'v-mask'
 import { VMaskDirective, VMaskFilter } from "v-mask-directive-filter";
+import './assets/tailwind.css'
 Vue.use(require('vue-moment'));
 Vue.directive("mascara", VMaskDirective);
 Vue.filter("mask", VMaskFilter);
