@@ -2,17 +2,21 @@
     <div>
         <b-form inline @submit="onSubmit" v-if="show" class="pt-4">
             <div class="grid grid-rows-4 grid-flow-row gap-12 py-8 pr-8">
-                <b-input-group title="Nome de usuário">
-                    <b-input-group-prepend is-text>
-                        <b-icon icon="person-fill"></b-icon>
-                    </b-input-group-prepend>
-                    <b-form-input
-                        type="text"
-                        v-model="form.username"
-                        placeholder="Nome de usuário"
-                        required
-                    ></b-form-input>
-                </b-input-group>
+                <b-form-group>
+                    <b-input-group title="Nome de usuário">
+                        <b-input-group-prepend is-text>
+                            <b-icon icon="person-fill"></b-icon>
+                        </b-input-group-prepend>
+                        <b-form-input
+                            class="w-full"
+                            id="username"
+                            type="text"
+                            v-model="form.username"
+                            placeholder="Nome de usuário"
+                            required
+                        ></b-form-input>
+                    </b-input-group>
+                </b-form-group>
 
                 <b-input-group title="Email">
                     <b-input-group-prepend is-text>
