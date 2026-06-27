@@ -1,24 +1,78 @@
-# vueflix
+# cinerooom-client
 
-## Project setup
-```
+Vue 3 frontend for Cinerooom — a streaming catalog app.
+
+## Tech Stack
+
+- **Vue 3** + Vue Router 4
+- **Tailwind CSS 4** + tw-animate-css
+- **Shadcn-Vue** (Reka UI) + class-variance-authority
+- **Biome** — linter & formatter
+- **Vite 6**
+
+## Project Setup
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+### Development
+
+```bash
 npm run dev
 ```
 
-### Compiles and minifies for production
-```
+### Production Build
+
+```bash
 npm run build
 ```
 
-### Lints and fixes files
+### Preview Build
+
+```bash
+npm run preview
 ```
+
+### Lint
+
+```bash
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Format
+
+```bash
+npm run format
+```
+
+## Project Structure
+
+```
+src/
+├── assets/
+│   └── tailwind.css        # Global styles & CSS variables
+├── components/
+│   ├── catalog-title/      # CatalogTitle component
+│   ├── login/              # Auth form components (login, register, forgot/redefine password)
+│   ├── Footer.vue
+│   ├── Layout.vue
+│   └── MoviesSection.vue
+├── lib/
+│   └── utils.js            # Shared utilities (cn helper)
+├── models/
+│   ├── catalog/            # MainCatalog, MoviesCatalog, SeriesCatalog
+│   ├── footer/             # FooterModel
+│   └── navbar/             # NavBar
+├── router/
+│   └── index.js
+├── views/
+│   └── pages/
+│       ├── auth/           # Login, Register, ForgotPassword, RedefinePassword
+│       ├── HomeView.vue
+│       ├── Movies.vue
+│       ├── Series.vue
+│       └── AboutView.vue
+├── App.vue
+└── main.js
+```
