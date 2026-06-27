@@ -1,51 +1,61 @@
 <template>
-    <div>
-        <div>
-            <Carousel
-                :per-page="6"
-                :paginationEnabled="false"
-                :spacePadding="50"
-            >
-                <slide
+    <div class="relative px-10">
+        <div class="overflow-hidden" ref="emblaRef">
+            <div class="flex">
+                <div
                     v-for="movie in movies"
-                    class="w-full relative mb-5 mt-4"
+                    :key="movie.id"
+                    class="flex-none w-1/6 pr-2"
                 >
-                    <div class="pb-2 pr-2">
-                        <b-img
-                            :src="movie.banner"
-                            fluid-grow
-                            alt="Banner Movie"
-                            class="bind-b-img swiper-slide"
-                        ></b-img>
-                    </div>
-                </slide>
-            </Carousel>
+                    <img
+                        :src="movie.banner"
+                        class="w-full h-[19vh] object-cover transition-transform duration-250 hover:scale-110 hover:z-10 relative cursor-pointer"
+                        alt="Banner Movie"
+                    />
+                </div>
+            </div>
         </div>
+        <button
+            @click="scrollPrev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white hover:bg-black/90 transition-colors z-10"
+            aria-label="Anterior"
+        >
+            <ChevronLeft class="w-5 h-5" />
+        </button>
+        <button
+            @click="scrollNext"
+            class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white hover:bg-black/90 transition-colors z-10"
+            aria-label="Próximo"
+        >
+            <ChevronRight class="w-5 h-5" />
+        </button>
     </div>
 </template>
 
 <script>
-    import { Carousel, Slide } from 'vue-carousel'
+    import emblaCarouselVue from 'embla-carousel-vue'
+    import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
     export default {
-        components: { Carousel, Slide },
+        components: { ChevronLeft, ChevronRight },
         props: {
             movies: { type: Array },
             sections: { type: Array },
         },
+        setup() {
+            const [emblaRef, emblaApi] = emblaCarouselVue({
+                loop: true,
+                align: 'start',
+            })
+
+            function scrollPrev() {
+                emblaApi.value?.scrollPrev()
+            }
+            function scrollNext() {
+                emblaApi.value?.scrollNext()
+            }
+
+            return { emblaRef, scrollPrev, scrollNext }
+        },
     }
 </script>
-
-<style>
-    .swiper-slide {
-        transition: 250ms all;
-    }
-    .swiper-slide:hover {
-        z-index: 1 !important;
-        transform: scale(1.3);
-    }
-    .bind-b-img {
-        height: 19vh;
-        object-fit: cover;
-    }
-</style>

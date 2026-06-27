@@ -1,7 +1,7 @@
 <template>
     <div>
         <SeriesCatalog v-slot="{ sections, movies }">
-            <div v-for="section in sections">
+            <div v-for="section in sections" :key="section.id">
                 <CatalogTitle :section="section.title" />
                 <movies-section :movies="movies" />
             </div>

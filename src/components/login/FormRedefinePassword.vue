@@ -1,66 +1,44 @@
 <template>
     <div>
-        <b-form @submit="onSubmit" v-if="show" class="pt-4">
-            <b-form-group
-                id="input-group-1"
-                label-for="input-1"
-                class="w-full py-1"
-            >
-                <b-form-input
-                    id="input-1"
+        <form @submit="onSubmit" v-if="show" class="pt-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+                <input
+                    id="input-password"
                     v-model="form.password"
-                    size="lg"
-                    :state="passwordVerifiquetion"
                     type="password"
+                    class="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
                     placeholder="Digite sua senha atual"
                     required
-                ></b-form-input>
-                <b-form-invalid-feedback id="input-live-feedback">
-                    Digite pelo menos 3 caractéres
-                </b-form-invalid-feedback>
-            </b-form-group>
-
-            <b-form-group id="input-group-2" label-for="input-2">
-                <b-form-input
-                    id="input-2"
+                />
+                <span class="text-xs text-red-400">Digite pelo menos 3 caractéres</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <input
+                    id="input-redefine"
                     v-model="form.redefinePassword"
                     type="password"
-                    size="lg"
-                    :state="passwordVerifiquetion"
+                    class="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
                     placeholder="Digite sua nova senha"
                     required
-                ></b-form-input>
-
-                <b-form-invalid-feedback id="input-live-feedback">
-                    A senha precisa ter mais de 8 digitos
-                </b-form-invalid-feedback>
-            </b-form-group>
-
-            <b-button
+                />
+                <span class="text-xs text-red-400">A senha precisa ter mais de 8 digitos</span>
+            </div>
+            <button
                 type="submit"
-                variant="danger "
-                class="w-full bg-red-600 mt-4"
-                >Enviar</b-button
+                class="w-full rounded-md bg-red-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 mt-4"
             >
-        </b-form>
+                Enviar
+            </button>
+        </form>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'FormLogin',
-        computed: {
-            passwordVerifiquetion() {
-                return true
-                //  this.form.password.length > 7 ? true : false
-            },
-        },
+        name: 'FormRedefinePassword',
         data() {
             return {
-                form: {
-                    password: '',
-                    redefinePassword: '',
-                },
+                form: { password: '', redefinePassword: '' },
                 show: true,
             }
         },

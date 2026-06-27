@@ -1,85 +1,57 @@
 <template>
     <div>
-        <b-form @submit="onSubmit" v-if="show" class="pt-4">
-            <b-form-group
-                id="input-group-1"
-                label-for="input-1"
-                class="w-full py-1"
-            >
-                <b-form-input
-                    id="input-1"
+        <form @submit="onSubmit" v-if="show" class="pt-4 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+                <input
+                    id="input-email"
                     v-model="form.email"
-                    size="lg"
-                    :state="emailVerification"
                     type="email"
+                    class="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
                     placeholder="Digite seu e-mail"
                     required
-                ></b-form-input>
-                <b-form-invalid-feedback id="input-live-feedback">
-                    Digite pelo menos 3 caractéres
-                </b-form-invalid-feedback>
-            </b-form-group>
+                />
+                <span class="text-xs text-red-400">Digite pelo menos 3 caractéres</span>
+            </div>
 
-            <b-form-group id="input-group-2" label-for="input-2">
-                <b-form-input
-                    id="input-2"
+            <div class="flex flex-col gap-1">
+                <input
+                    id="input-password"
                     v-model="form.password"
                     type="password"
-                    size="lg"
-                    :state="passwordVerifiquetion"
+                    class="w-full rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
                     placeholder="Digite sua senha"
                     required
-                ></b-form-input>
-                <router-link
-                    class="text-red-400 float-right"
-                    to="/auth/forgot-password"
+                />
+                <router-link class="self-end text-sm text-red-400 hover:text-red-300" to="/auth/forgot-password"
                     >Esqueceu a senha?</router-link
                 >
-
-                <b-form-invalid-feedback id="input-live-feedback">
-                    A senha precisa ter mais de 8 digitos
-                </b-form-invalid-feedback>
+                <span class="text-xs text-red-400">A senha precisa ter mais de 8 digitos</span>
                 <div class="pt-10 text-gray-500">
                     <span
                         >É novo por aqui?
-                        <router-link
-                            class="text-lg text-red-400"
-                            to="/auth/register"
+                        <router-link class="text-lg text-red-400 hover:text-red-300" to="/auth/register"
                             >Se cadastrar</router-link
                         >
                     </span>
                 </div>
-            </b-form-group>
+            </div>
 
-            <b-button
+            <button
                 type="submit"
-                variant="danger "
-                class="w-full bg-red-600 mt-4"
-                >Entrar</b-button
+                class="w-full rounded-md bg-red-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 mt-4"
             >
-        </b-form>
+                Entrar
+            </button>
+        </form>
     </div>
 </template>
 
 <script>
     export default {
         name: 'FormLogin',
-        computed: {
-            emailVerification() {
-                return true
-                // this.form.email.length > 2 ? true : false
-            },
-            passwordVerifiquetion() {
-                return true
-                //  this.form.password.length > 7 ? true : false
-            },
-        },
         data() {
             return {
-                form: {
-                    email: '',
-                    password: '',
-                },
+                form: { email: '', password: '' },
                 show: true,
             }
         },

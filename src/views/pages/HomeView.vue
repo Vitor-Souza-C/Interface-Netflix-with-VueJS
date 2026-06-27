@@ -1,7 +1,7 @@
 <template>
     <div>
         <MainCatalog v-slot="{ user, sections, movies }">
-            <div v-for="section in sections">
+            <div v-for="section in sections" :key="section.id">
                 <div class="flex flex-row">
                     <CatalogTitle :section="section.title" />
                     <H4
