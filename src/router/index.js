@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/pages/HomeView.vue'
-import Layout from '../components/Layout.vue'
-import Login from '../views/pages/auth/Login.vue'
-import LayoutAuth from '../components/login/LayoutAuth.vue'
-import Register from '../views/pages/auth/Register.vue'
-import ForgotPassword from '../views/pages/auth/ForgotPassword.vue'
-import RedefinePassword from '../views/pages/auth/RedefinePassword.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Layout from '../components/Layout.vue';
+import LayoutAuth from '../components/login/LayoutAuth.vue';
+import ForgotPassword from '../views/pages/auth/ForgotPassword.vue';
+import Login from '../views/pages/auth/Login.vue';
+import RedefinePassword from '../views/pages/auth/RedefinePassword.vue';
+import Register from '../views/pages/auth/Register.vue';
+import HomeView from '../views/pages/HomeView.vue';
 
 const routes = [
     {
@@ -36,11 +36,11 @@ const routes = [
             },
         ],
     },
-]
+];
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
-})
+});
 
-export default router
+export default router;
